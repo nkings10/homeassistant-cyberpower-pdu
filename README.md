@@ -435,3 +435,13 @@ switch.office_desk_pdu_switch_7:
 switch.office_desk_pdu_switch_8:
   hidden: true
 ```
+
+Edit:
+```
+```
+
+Add: (Below automation, script, scene towards the top)
+
+```
+customize: !include customize.yaml
+```
