@@ -3,6 +3,8 @@ Instructions to setup a CyberPower PDU41005 PDU in Home Assistant using SNMP
 
 The PDU's credentials are stored in the secrets.yaml file, in configuration.yaml the snmp authentication is in a block and referenced in each sensor and switch.
 
+Scripts are used as the switch instead, as the native SNMP switches dont update instantly. So a script with a 500ms delay before triggering an update is used instead as a work around.
+
 Note: The paths referenced are specific to my Home Assistant container on unRAID, adjust to suit yours.
 
 Edit:
@@ -24,8 +26,8 @@ nano /mnt/system/appdata/homeassistant/scripts.yaml
 ```
 
 Add:
-
 ```
+# Office Desk PDU Switch 1 On
 office_desk_pdu_switch_1_on:
   alias: "Office Desk PDU Switch 1 - On"
   sequence:
@@ -38,6 +40,7 @@ office_desk_pdu_switch_1_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_1"
 
+# Office Desk PDU Switch 1 Off
 office_desk_pdu_switch_1_off:
   alias: "Office Desk PDU Switch 1 - Off"
   sequence:
@@ -50,6 +53,7 @@ office_desk_pdu_switch_1_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_1"
 
+# Office Desk PDU Switch 2 On
 office_desk_pdu_switch_2_on:
   alias: "Office Desk PDU Switch 2 - On"
   sequence:
@@ -62,6 +66,7 @@ office_desk_pdu_switch_2_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_2"
 
+# Office Desk PDU Switch 2 Off
 office_desk_pdu_switch_2_off:
   alias: "Office Desk PDU Switch 2 - Off"
   sequence:
@@ -74,6 +79,7 @@ office_desk_pdu_switch_2_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_2"
 
+# Office Desk PDU Switch 3 On
 office_desk_pdu_switch_3_on:
   alias: "Office Desk PDU Switch 3 - On"
   sequence:
@@ -86,6 +92,7 @@ office_desk_pdu_switch_3_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_3"
 
+# Office Desk PDU Switch 3 Off
 office_desk_pdu_switch_3_off:
   alias: "Office Desk PDU Switch 3 - Off"
   sequence:
@@ -98,6 +105,7 @@ office_desk_pdu_switch_3_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_3"
 
+# Office Desk PDU Switch 4 On
 office_desk_pdu_switch_4_on:
   alias: "Office Desk PDU Switch 4 - On"
   sequence:
@@ -110,6 +118,7 @@ office_desk_pdu_switch_4_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_4"
 
+# Office Desk PDU Switch 4 Off
 office_desk_pdu_switch_4_off:
   alias: "Office Desk PDU Switch 4 - Off"
   sequence:
@@ -122,6 +131,7 @@ office_desk_pdu_switch_4_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_4"
 
+# Office Desk PDU Switch 5 On
 office_desk_pdu_switch_5_on:
   alias: "Office Desk PDU Switch 5 - On"
   sequence:
@@ -134,6 +144,7 @@ office_desk_pdu_switch_5_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_5"
 
+# Office Desk PDU Switch 5 Off
 office_desk_pdu_switch_5_off:
   alias: "Office Desk PDU Switch 5 - Off"
   sequence:
@@ -146,6 +157,7 @@ office_desk_pdu_switch_5_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_5"
 
+# Office Desk PDU Switch 6 On
 office_desk_pdu_switch_6_on:
   alias: "Office Desk PDU Switch 6 - On"
   sequence:
@@ -158,6 +170,7 @@ office_desk_pdu_switch_6_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_6"
 
+# Office Desk PDU Switch 6 Off
 office_desk_pdu_switch_6_off:
   alias: "Office Desk PDU Switch 6 - Off"
   sequence:
@@ -170,6 +183,7 @@ office_desk_pdu_switch_6_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_6"
 
+# Office Desk PDU Switch 7 On
 office_desk_pdu_switch_7_on:
   alias: "Office Desk PDU Switch 7 - On"
   sequence:
@@ -182,6 +196,7 @@ office_desk_pdu_switch_7_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_7"
 
+# Office Desk PDU Switch 7 Off
 office_desk_pdu_switch_7_off:
   alias: "Office Desk PDU Switch 7 - Off"
   sequence:
@@ -194,6 +209,7 @@ office_desk_pdu_switch_7_off:
       target:
         entity_id: "switch.office_desk_pdu_switch_7"
 
+# Office Desk PDU Switch 8 On
 office_desk_pdu_switch_8_on:
   alias: "Office Desk PDU Switch 8 - On"
   sequence:
@@ -206,6 +222,7 @@ office_desk_pdu_switch_8_on:
       target:
         entity_id: "switch.office_desk_pdu_switch_8"
 
+# Office Desk PDU Switch 8 Off
 office_desk_pdu_switch_8_off:
   alias: "Office Desk PDU Switch 8 - Off"
   sequence:
@@ -346,6 +363,8 @@ switch:
    # ---------- Dashboard Switches ---------- #
   - platform: template
     switches:
+
+      # Office Desk PDU Switch 1 Refresh
       office_desk_pdu_switch_1_refresh:
         friendly_name: "Office Desk PDU Switch 1"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_1', 'on') }}"
@@ -354,6 +373,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_1_off
 
+      # Office Desk PDU Switch 2 Refresh
       office_desk_pdu_switch_2_refresh:
         friendly_name: "Office Desk PDU Switch 2"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_2', 'on') }}"
@@ -362,6 +382,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_2_off
 
+      # Office Desk PDU Switch 3 Refresh
       office_desk_pdu_switch_3_refresh:
         friendly_name: "Office Desk PDU Switch 3"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_3', 'on') }}"
@@ -370,6 +391,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_3_off
 
+      # Office Desk PDU Switch 4 Refresh
       office_desk_pdu_switch_4_refresh:
         friendly_name: "Office Desk PDU Switch 4"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_4', 'on') }}"
@@ -378,6 +400,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_4_off
 
+      # Office Desk PDU Switch 5 Refresh
       office_desk_pdu_switch_5_refresh:
         friendly_name: "Office Desk PDU Switch 5"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_5', 'on') }}"
@@ -386,6 +409,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_5_off
 
+      # Office Desk PDU Switch 6 Refresh
       office_desk_pdu_switch_6_refresh:
         friendly_name: "Office Desk PDU Switch 6"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_6', 'on') }}"
@@ -394,6 +418,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_6_off
 
+      # Office Desk PDU Switch 7 Refresh
       office_desk_pdu_switch_7_refresh:
         friendly_name: "Office Desk PDU Switch 7"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_7', 'on') }}"
@@ -402,6 +427,7 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_7_off
 
+      # Office Desk PDU Switch 8 Refresh
       office_desk_pdu_switch_8_refresh:
         friendly_name: "Office Desk PDU Switch 8"
         value_template: "{{ is_state('switch.office_desk_pdu_switch_8', 'on') }}"
