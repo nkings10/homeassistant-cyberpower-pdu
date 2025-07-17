@@ -3,6 +3,8 @@ Instructions to setup a CyberPower PDU41005 PDU in Home Assistant using SNMP
 
 The PDU's credentials are stored in the secrets.yaml file, in configuration.yaml the snmp authentication is in a block and referenced in each sensor and switch.
 
+Note: The paths referenced are specific to my Home Assistant container on unRAID, adjust to suit yours.
+
 Edit:
 ```
 nano /mnt/system/appdata/homeassistant/secrets.yaml
