@@ -20,6 +20,207 @@ office_pdu_priv_key: "<your-private-key>"
 
 Edit:
 ```
+nano /mnt/system/appdata/homeassistant/scripts.yaml
+```
+
+Add:
+
+```
+office_desk_pdu_switch_1_on:
+  alias: "Office Desk PDU Switch 1 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_1"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_1"
+
+office_desk_pdu_switch_1_off:
+  alias: "Office Desk PDU Switch 1 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_1"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_1"
+
+office_desk_pdu_switch_2_on:
+  alias: "Office Desk PDU Switch 2 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_2"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_2"
+
+office_desk_pdu_switch_2_off:
+  alias: "Office Desk PDU Switch 2 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_2"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_2"
+
+office_desk_pdu_switch_3_on:
+  alias: "Office Desk PDU Switch 3 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_3"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_3"
+
+office_desk_pdu_switch_3_off:
+  alias: "Office Desk PDU Switch 3 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_3"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_3"
+
+office_desk_pdu_switch_4_on:
+  alias: "Office Desk PDU Switch 4 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_4"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_4"
+
+office_desk_pdu_switch_4_off:
+  alias: "Office Desk PDU Switch 4 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_4"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_4"
+
+office_desk_pdu_switch_5_on:
+  alias: "Office Desk PDU Switch 5 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_5"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_5"
+
+office_desk_pdu_switch_5_off:
+  alias: "Office Desk PDU Switch 5 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_5"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_5"
+
+office_desk_pdu_switch_6_on:
+  alias: "Office Desk PDU Switch 6 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_6"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_6"
+
+office_desk_pdu_switch_6_off:
+  alias: "Office Desk PDU Switch 6 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_6"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_6"
+
+office_desk_pdu_switch_7_on:
+  alias: "Office Desk PDU Switch 7 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_7"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_7"
+
+office_desk_pdu_switch_7_off:
+  alias: "Office Desk PDU Switch 7 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_7"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_7"
+
+office_desk_pdu_switch_8_on:
+  alias: "Office Desk PDU Switch 8 - On"
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: "switch.office_desk_pdu_switch_8"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_8"
+
+office_desk_pdu_switch_8_off:
+  alias: "Office Desk PDU Switch 8 - Off"
+  sequence:
+    - service: switch.turn_off
+      target:
+        entity_id: "switch.office_desk_pdu_switch_8"
+    - delay:
+        milliseconds: 500
+    - service: homeassistant.update_entity
+      target:
+        entity_id: "switch.office_desk_pdu_switch_8"
+```
+
+Edit:
+```
 nano /mnt/system/appdata/homeassistant/configuration.yaml
 ```
 
@@ -67,6 +268,8 @@ sensor:
     baseoid: "1.3.6.1.4.1.3808.1.1.3.2.3.1.1.9.1"
 
 switch:
+
+  # ---------- SNMP Switches ---------- #
 
   # Office Desk PDU Switch 1
   - platform: snmp
@@ -139,4 +342,96 @@ switch:
     command_oid: "1.3.6.1.4.1.3808.1.1.3.3.3.1.1.4.8"
     payload_on: "1"
     payload_off: "2"
+
+   # ---------- Dashboard Switches ---------- #
+  - platform: template
+    switches:
+      office_desk_pdu_switch_1_refresh:
+        friendly_name: "Office Desk PDU Switch 1"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_1', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_1_on
+        turn_off:
+          service: script.office_desk_pdu_switch_1_off
+
+      office_desk_pdu_switch_2_refresh:
+        friendly_name: "Office Desk PDU Switch 2"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_2', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_2_on
+        turn_off:
+          service: script.office_desk_pdu_switch_2_off
+
+      office_desk_pdu_switch_3_refresh:
+        friendly_name: "Office Desk PDU Switch 3"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_3', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_3_on
+        turn_off:
+          service: script.office_desk_pdu_switch_3_off
+
+      office_desk_pdu_switch_4_refresh:
+        friendly_name: "Office Desk PDU Switch 4"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_4', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_4_on
+        turn_off:
+          service: script.office_desk_pdu_switch_4_off
+
+      office_desk_pdu_switch_5_refresh:
+        friendly_name: "Office Desk PDU Switch 5"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_5', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_5_on
+        turn_off:
+          service: script.office_desk_pdu_switch_5_off
+
+      office_desk_pdu_switch_6_refresh:
+        friendly_name: "Office Desk PDU Switch 6"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_6', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_6_on
+        turn_off:
+          service: script.office_desk_pdu_switch_6_off
+
+      office_desk_pdu_switch_7_refresh:
+        friendly_name: "Office Desk PDU Switch 7"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_7', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_7_on
+        turn_off:
+          service: script.office_desk_pdu_switch_7_off
+
+      office_desk_pdu_switch_8_refresh:
+        friendly_name: "Office Desk PDU Switch 8"
+        value_template: "{{ is_state('switch.office_desk_pdu_switch_8', 'on') }}"
+        turn_on:
+          service: script.office_desk_pdu_switch_8_on
+        turn_off:
+          service: script.office_desk_pdu_switch_8_off
+```
+
+Edit:
+```
+nano /mnt/system/appdata/homeassistant/customize.yaml
+```
+
+Add:
+```
+switch.office_desk_pdu_switch_1:
+  hidden: true
+switch.office_desk_pdu_switch_2:
+  hidden: true
+switch.office_desk_pdu_switch_3:
+  hidden: true
+switch.office_desk_pdu_switch_4:
+  hidden: true
+switch.office_desk_pdu_switch_5:
+  hidden: true
+switch.office_desk_pdu_switch_6:
+  hidden: true
+switch.office_desk_pdu_switch_7:
+  hidden: true
+switch.office_desk_pdu_switch_8:
+  hidden: true
 ```
