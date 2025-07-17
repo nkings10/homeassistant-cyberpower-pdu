@@ -410,38 +410,3 @@ switch:
         turn_off:
           service: script.office_desk_pdu_switch_8_off
 ```
-
-Edit:
-```
-nano /mnt/system/appdata/homeassistant/customize.yaml
-```
-
-Add:
-```
-switch.office_desk_pdu_switch_1:
-  hidden: true
-switch.office_desk_pdu_switch_2:
-  hidden: true
-switch.office_desk_pdu_switch_3:
-  hidden: true
-switch.office_desk_pdu_switch_4:
-  hidden: true
-switch.office_desk_pdu_switch_5:
-  hidden: true
-switch.office_desk_pdu_switch_6:
-  hidden: true
-switch.office_desk_pdu_switch_7:
-  hidden: true
-switch.office_desk_pdu_switch_8:
-  hidden: true
-```
-
-Edit:
-```
-```
-
-Add: (Below automation, script, scene towards the top)
-
-```
-customize: !include customize.yaml
-```
